@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class Entrant {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "entrant_id")
     private int entrantId;
     @Column(name = "first_name", nullable = false)

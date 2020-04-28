@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class TheDepartmentsOfTheFaculty {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "departments_code")
     private int departmentsCode;
     @ManyToOne

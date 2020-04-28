@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Students {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int numberOfMember;
 
     @ManyToOne

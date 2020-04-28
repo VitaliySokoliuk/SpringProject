@@ -8,7 +8,7 @@ import java.util.Date;
 public class RequestForEntry {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "request_id")
     private int requestId;
 
