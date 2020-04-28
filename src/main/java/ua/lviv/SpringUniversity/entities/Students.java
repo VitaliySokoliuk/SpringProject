@@ -11,7 +11,7 @@ public class Students {
     private int numberOfMember;
 
     @ManyToOne
-    @JoinColumn(name = "request_id")
+    @JoinColumn(name = "request_id", nullable = false)
     private RequestForEntry requestId;
 
     public Students(int numberOfMember, RequestForEntry requestId) {

@@ -13,11 +13,11 @@ public class RequestForEntry {
     private int requestId;
 
     @ManyToOne
-    @JoinColumn(name = "entrant_id")
+    @JoinColumn(name = "entrant_id", nullable = false)
     private Entrant entrant;
 
     @ManyToOne
-    @JoinColumn(name = "departments_code")
+    @JoinColumn(name = "departments_code", nullable = false)
     private TheDepartmentsOfTheFaculty department;
 
     @Column(name = "rating_score", nullable = false)

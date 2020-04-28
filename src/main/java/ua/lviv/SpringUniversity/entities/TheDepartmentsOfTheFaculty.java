@@ -11,10 +11,10 @@ public class TheDepartmentsOfTheFaculty {
     @Column(name = "departments_code")
     private int departmentsCode;
     @ManyToOne
-    @JoinColumn(name = "department_id")
+    @JoinColumn(name = "department_id", nullable = false)
     private Department department;
     @ManyToOne
-    @JoinColumn(name = "faculty_id")
+    @JoinColumn(name = "faculty_id", nullable = false)
     private Faculty faculty;
 
     public TheDepartmentsOfTheFaculty(int departmentsCode, Department department, Faculty faculty) {
