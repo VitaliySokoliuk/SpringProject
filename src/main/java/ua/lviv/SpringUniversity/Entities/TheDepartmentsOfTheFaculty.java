@@ -1,4 +1,4 @@
-package ua.lviv.SpringUniversity.entities;
+package ua.lviv.SpringUniversity.Entities;
 
 import javax.persistence.*;
 

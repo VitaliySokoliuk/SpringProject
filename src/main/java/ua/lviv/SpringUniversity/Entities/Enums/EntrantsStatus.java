@@ -1,4 +1,4 @@
-package ua.lviv.SpringUniversity.entities.Enums;
+package ua.lviv.SpringUniversity.Entities.Enums;
 
 public enum EntrantsStatus {
 
