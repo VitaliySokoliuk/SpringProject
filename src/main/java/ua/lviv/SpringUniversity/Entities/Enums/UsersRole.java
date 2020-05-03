@@ -2,7 +2,7 @@ package ua.lviv.SpringUniversity.Entities.Enums;
 
 public enum UsersRole {
 
-    USER,
-    ADMIN;
+    ROLE_USER,
+    ROLE_ADMIN;
 
 }

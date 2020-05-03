@@ -13,7 +13,7 @@ import java.util.Optional;
 @Service
 public class UserService {
 
-    private static final UsersRole DEFAULT_USERS_ROLE = UsersRole.ADMIN;
+    private static final UsersRole DEFAULT_USERS_ROLE = UsersRole.ROLE_ADMIN;
 
     private UserRepo userRepo;
     private PasswordEncoder passwordEncoder;
