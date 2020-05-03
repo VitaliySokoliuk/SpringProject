@@ -1,6 +1,6 @@
-package ua.lviv.SpringUniversity.entities;
+package ua.lviv.SpringUniversity.Entities;
 
-import ua.lviv.SpringUniversity.entities.CompositsKeys.CompositKeyForMark;
+import ua.lviv.SpringUniversity.Entities.CompositsKeys.CompositKeyForMark;
 
 import javax.persistence.*;
 

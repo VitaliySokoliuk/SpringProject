@@ -1,7 +1,7 @@
-package ua.lviv.SpringUniversity.entities.CompositsKeys;
+package ua.lviv.SpringUniversity.Entities.CompositsKeys;
 
-import ua.lviv.SpringUniversity.entities.Entrant;
-import ua.lviv.SpringUniversity.entities.Subject;
+import ua.lviv.SpringUniversity.Entities.Entrant;
+import ua.lviv.SpringUniversity.Entities.Subject;
 
 import javax.persistence.Embeddable;
 import java.io.Serializable;

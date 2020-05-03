@@ -1,6 +1,6 @@
-package ua.lviv.SpringUniversity.entities;
+package ua.lviv.SpringUniversity.Entities;
 
-import ua.lviv.SpringUniversity.entities.Enums.EntrantsStatus;
+import ua.lviv.SpringUniversity.Entities.Enums.EntrantsStatus;
 
 import javax.persistence.*;
 import java.util.Arrays;

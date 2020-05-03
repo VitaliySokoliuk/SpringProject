@@ -1,13 +1,18 @@
-package ua.lviv.SpringUniversity.entities;
+package ua.lviv.SpringUniversity.Entities;
 
-import ua.lviv.SpringUniversity.entities.Enums.UsersRole;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import ua.lviv.SpringUniversity.Entities.Enums.UsersRole;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
