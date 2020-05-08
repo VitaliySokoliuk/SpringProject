@@ -30,6 +30,9 @@ public class User implements Serializable {
     private String email;
     @Column(nullable = false)
     private String password;
+    @Column(columnDefinition = "boolean default false")
+    private boolean isEmailVerified;
+    private String verifyEmailHash;
 
     public User(int userId, String firstName, String lastName, UsersRole role, Date registrationDate,
                 String email, String password) {
@@ -43,6 +46,22 @@ public class User implements Serializable {
     }
 
     public User() {
+    }
+
+    public boolean isEmailVerified() {
+        return isEmailVerified;
+    }
+
+    public void setEmailVerified(boolean emailVerified) {
+        isEmailVerified = emailVerified;
+    }
+
+    public String getVerifyEmailHash() {
+        return verifyEmailHash;
+    }
+
+    public void setVerifyEmailHash(String verifyEmailHash) {
+        this.verifyEmailHash = verifyEmailHash;
     }
 
     public int getUserId() {
