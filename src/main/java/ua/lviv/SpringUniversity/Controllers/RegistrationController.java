@@ -2,23 +2,27 @@ package ua.lviv.SpringUniversity.Controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.lviv.SpringUniversity.Entities.User;
 import ua.lviv.SpringUniversity.Services.ForSecurity.UserService;
+import ua.lviv.SpringUniversity.Validators.RegistrationValidator;
 
-import java.util.Optional;
+import javax.validation.Valid;
 
 @Controller
 public class RegistrationController {
 
     private UserService userService;
+    private RegistrationValidator registrationValidator;
 
     @Autowired
-    public RegistrationController(UserService userService) {
+    public RegistrationController(UserService userService, RegistrationValidator registrationValidator) {
         this.userService = userService;
+        this.registrationValidator = registrationValidator;
     }
 
     @GetMapping("/registration")
@@ -27,13 +31,16 @@ public class RegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(@ModelAttribute User user){
-        Optional<User> searchUser = userService.findByEmail(user.getEmail());
+    public String addUser(@ModelAttribute @Valid User user, BindingResult bindingResult){
 
-        if (searchUser.isPresent()){
+        registrationValidator.validate(user, bindingResult);
+
+        if(bindingResult.hasErrors()){
             return "registration";
         }
+
         userService.save(user);
+
         return "redirect:/login";
     }
 
