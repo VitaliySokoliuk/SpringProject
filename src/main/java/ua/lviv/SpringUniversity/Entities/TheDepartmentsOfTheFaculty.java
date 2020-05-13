@@ -23,6 +23,11 @@ public class TheDepartmentsOfTheFaculty {
         this.faculty = faculty;
     }
 
+    public TheDepartmentsOfTheFaculty(Department department, Faculty faculty) {
+        this.department = department;
+        this.faculty = faculty;
+    }
+
     public TheDepartmentsOfTheFaculty() {
     }
 
