@@ -22,8 +22,8 @@ public class MainController {
         return "main";
     }
     @PostMapping("/main")
-    public String main(@RequestParam String usEmail, HttpServletRequest req){
-        System.out.println(usEmail);
+    public String main2(HttpServletRequest req){
+
         return "main";
     }
 

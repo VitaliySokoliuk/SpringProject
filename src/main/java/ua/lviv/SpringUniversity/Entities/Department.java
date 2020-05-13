@@ -21,6 +21,11 @@ public class Department {
         this.maxNumberOfStudents = maxNumberOfStudents;
     }
 
+    public Department(String departmentName, int maxNumberOfStudents) {
+        this.departmentName = departmentName;
+        this.maxNumberOfStudents = maxNumberOfStudents;
+    }
+
     public Department() {
     }
 

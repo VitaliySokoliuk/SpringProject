@@ -25,6 +25,11 @@ public class Faculty {
         this.facultyName = facultyName;
     }
 
+    public Faculty(String facultyName, String description) {
+        this.facultyName = facultyName;
+        this.description = description;
+    }
+
     public Faculty() {
     }
 
