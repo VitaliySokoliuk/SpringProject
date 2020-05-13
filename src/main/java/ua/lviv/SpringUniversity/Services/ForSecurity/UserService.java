@@ -50,4 +50,6 @@ public class UserService {
         userRepo.findByVerifyEmailHash(hash).ifPresent(user -> userRepo.confirmEmail(user.getUserId()));
     }
 
+
+
 }

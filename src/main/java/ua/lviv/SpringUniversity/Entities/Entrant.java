@@ -24,7 +24,7 @@ public class Entrant {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private EntrantsStatus status;
-    @Column(name = "grade_point_average", nullable = false)
+    @Column(name = "grade_point_average")
     private double gradePointAverage;
     @Column(name = "score_for_special_achievements", nullable = false)
     private double scoreForSpecialAchievements;
@@ -59,6 +59,27 @@ public class Entrant {
         this.email = email;
         this.status = status;
         this.gradePointAverage = gradePointAverage;
+        this.scoreForSpecialAchievements = scoreForSpecialAchievements;
+        this.scoreForPrivilege = scoreForPrivilege;
+        this.photo = photo;
+    }
+
+    public Entrant(String firstName, String lastName, String phoneNumber, String email,
+                   double scoreForSpecialAchievements, double scoreForPrivilege) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.scoreForSpecialAchievements = scoreForSpecialAchievements;
+        this.scoreForPrivilege = scoreForPrivilege;
+    }
+
+    public Entrant(String firstName, String lastName, String phoneNumber, String email,
+                   double scoreForSpecialAchievements, double scoreForPrivilege, byte[] photo) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
         this.scoreForSpecialAchievements = scoreForSpecialAchievements;
         this.scoreForPrivilege = scoreForPrivilege;
         this.photo = photo;
