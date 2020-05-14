@@ -15,6 +15,10 @@
     <a href="add_entrant">To become an entrant</a>
 </div>
 
+<div class = "item">
+    <a href="add_marks">Add marks</a>
+</div>
+
 
 
 </body>

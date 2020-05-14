@@ -29,9 +29,9 @@
         <p>Last name: ${entrant.lastName}</p>
         <p>Phone number: ${entrant.phoneNumber}</p>
         <p>Email: ${entrant.email}</p>
-        <p>Grade point average: ${entrant.gradePointAverage}</p>
         <p>Score for special achievements: ${entrant.scoreForSpecialAchievements}</p>
-        <p>Score for privilege: ${entrant.scoreForPrivilege}</p>
+        <p>GPAofCertificate: ${entrant.GPAofCertificate}</p>
+        <p>Rating point: ${entrant.ratingPoint}</p>
     </div>
 </c:if>
 
@@ -51,16 +51,13 @@
             <input type="email" readonly name="email" value="${user.email}" class="form-control"><br>
             <label>Score for special achievements:</label>
             <input type="number" step="any" name = "scoreForSpecialAchievements" placeholder="Input your score for special achievements" class="form-control"><br>
-            <label>Score for privilege:</label>
-            <input type="number" step="any" name = "scoreForPrivilege" placeholder="Input your score for privilege" class="form-control"><br>
+            <label>GPA of certificate:</label>
+            <input type="number" step="any" name = "GPAofCertificate" placeholder="Input your GPA of certificate" class="form-control"><br>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button type="submit" class="btn btn-dark">Fill</button><br>
         </form>
     </div>
 </c:if>
-
-
-
 
 
 </body>
