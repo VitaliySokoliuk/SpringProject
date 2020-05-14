@@ -46,4 +46,20 @@ public class CustomUserDetailsService implements UserDetailsService {
         return u;
     }
 
+    public static String getCurrentUserEmail(){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+
+        if (auth == null) {
+            throw new RuntimeException("");
+        }
+        Object obj = auth.getPrincipal();
+        String username = "";
+        if (obj instanceof UserDetails) {
+            username = ((UserDetails) obj).getUsername();
+        } else {
+            username = obj.toString();
+        }
+        return username;
+    }
+
 }

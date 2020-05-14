@@ -24,12 +24,12 @@ public class Entrant {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private EntrantsStatus status;
-    @Column(name = "grade_point_average", nullable = false)
-    private double gradePointAverage;
+    @Column(name = "rating_point")
+    private double ratingPoint;
     @Column(name = "score_for_special_achievements", nullable = false)
     private double scoreForSpecialAchievements;
-    @Column(name = "score_for_privilege", nullable = false)
-    private double scoreForPrivilege;
+    @Column(name = "GPA_of_certificate", nullable = false)
+    private double GPAofCertificate;
     @Lob
     private byte[] photo;
 
@@ -37,30 +37,51 @@ public class Entrant {
     }
 
     public Entrant(int entrantId, String firstName, String lastName, String phoneNumber, String email,
-                   EntrantsStatus status, double gradePointAverage, double scoreForSpecialAchievements, double scoreForPrivilege) {
+                   EntrantsStatus status, double ratingPoint, double scoreForSpecialAchievements, double GPAofCertificate) {
         this.entrantId = entrantId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.status = status;
-        this.gradePointAverage = gradePointAverage;
+        this.ratingPoint = ratingPoint;
         this.scoreForSpecialAchievements = scoreForSpecialAchievements;
-        this.scoreForPrivilege = scoreForPrivilege;
+        this.GPAofCertificate = GPAofCertificate;
     }
 
     public Entrant(int entrantId, String firstName, String lastName, String phoneNumber, String email,
-                   EntrantsStatus status, double gradePointAverage, double scoreForSpecialAchievements,
-                   double scoreForPrivilege, byte[] photo) {
+                   EntrantsStatus status, double ratingPoint, double scoreForSpecialAchievements,
+                   double GPAofCertificate, byte[] photo) {
         this.entrantId = entrantId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
         this.email = email;
         this.status = status;
-        this.gradePointAverage = gradePointAverage;
+        this.ratingPoint = ratingPoint;
         this.scoreForSpecialAchievements = scoreForSpecialAchievements;
-        this.scoreForPrivilege = scoreForPrivilege;
+        this.GPAofCertificate = GPAofCertificate;
+        this.photo = photo;
+    }
+
+    public Entrant(String firstName, String lastName, String phoneNumber, String email,
+                   double scoreForSpecialAchievements, double GPAofCertificate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.scoreForSpecialAchievements = scoreForSpecialAchievements;
+        this.GPAofCertificate = GPAofCertificate;
+    }
+
+    public Entrant(String firstName, String lastName, String phoneNumber, String email,
+                   double scoreForSpecialAchievements, double GPAofCertificate, byte[] photo) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.scoreForSpecialAchievements = scoreForSpecialAchievements;
+        this.GPAofCertificate = GPAofCertificate;
         this.photo = photo;
     }
 
@@ -112,12 +133,12 @@ public class Entrant {
         this.status = status;
     }
 
-    public double getGradePointAverage() {
-        return gradePointAverage;
+    public double getRatingPoint() {
+        return ratingPoint;
     }
 
-    public void setGradePointAverage(double gradePointAverage) {
-        this.gradePointAverage = gradePointAverage;
+    public void setRatingPoint(double ratingPoint) {
+        this.ratingPoint = ratingPoint;
     }
 
     public double getScoreForSpecialAchievements() {
@@ -128,12 +149,12 @@ public class Entrant {
         this.scoreForSpecialAchievements = scoreForSpecialAchievements;
     }
 
-    public double getScoreForPrivilege() {
-        return scoreForPrivilege;
+    public double getGPAofCertificate() {
+        return GPAofCertificate;
     }
 
-    public void setScoreForPrivilege(double scoreForPrivilege) {
-        this.scoreForPrivilege = scoreForPrivilege;
+    public void setGPAofCertificate(double GPAofCertificate) {
+        this.GPAofCertificate = GPAofCertificate;
     }
 
     public byte[] getPhoto() {
@@ -153,9 +174,9 @@ public class Entrant {
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", email='" + email + '\'' +
                 ", status=" + status +
-                ", gradePointAverage=" + gradePointAverage +
+                ", ratingPoint=" + ratingPoint +
                 ", scoreForSpecialAchievements=" + scoreForSpecialAchievements +
-                ", scoreForPrivilege=" + scoreForPrivilege +
+                ", GPAofCertificate=" + GPAofCertificate +
                 ", photo=" + Arrays.toString(photo) +
                 '}';
     }
