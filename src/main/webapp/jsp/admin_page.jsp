@@ -19,7 +19,6 @@
         <a href="/admin_page/f_d_menu">Faculties and departments</a>
     </div>
 
-
 </div>
 
 

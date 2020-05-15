@@ -1,5 +1,7 @@
 .item{
-    height: 150px;
-    width: 350px;
-    background-color: darkgray;
+    height: 200px;
+    width: 80%;
+    background-color: #d5d5d5;
+    margin: 30px auto auto;
+    font-size: 25px;
 }
