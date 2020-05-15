@@ -14,4 +14,7 @@ public interface RequestForEntryRepo extends CrudRepository<RequestForEntry, Int
             nativeQuery = true)
     List<Integer> getDepartmentsCodeByEntrantId(int entrantId);
 
+    @Query(value = "select r from RequestForEntry r where r.entrant.entrantId = ?1")
+    List<RequestForEntry> getByEntrantId(int id);
+
 }

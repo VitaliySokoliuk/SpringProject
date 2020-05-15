@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import ua.lviv.SpringUniversity.Dtos.DepDescriptionDto;
 import ua.lviv.SpringUniversity.Entities.Entrant;
+import ua.lviv.SpringUniversity.Entities.Enums.EntrantsStatus;
 import ua.lviv.SpringUniversity.Entities.RequestForEntry;
 import ua.lviv.SpringUniversity.Services.DepartmentService;
 import ua.lviv.SpringUniversity.Services.EntrantService;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
+
+import static ua.lviv.SpringUniversity.Entities.Enums.EntrantsStatus.APPLICATION_IS_SUBMITTED;
 
 @Controller
 public class RequestController {
@@ -50,13 +53,6 @@ public class RequestController {
         List<DepDescriptionDto> depDescription = theDepartmentsOfTheFacultyService.getDepDescription();
         List<Integer> departmentsCodes = requestForEntryService.getDepartmentsCodeByEntrantId(entrant.getEntrantId());
 
-//        Iterator<DepDescriptionDto> iterator = depDescription.iterator();
-//        while (iterator.hasNext()){
-//            for (Integer i : departmentsCodes) {
-//                if()
-//            }
-//        }
-
         List<DepDescriptionDto> depDescription2 = new ArrayList<>();
 
         for (DepDescriptionDto d : depDescription) {
@@ -66,13 +62,9 @@ public class RequestController {
                 }
             }
         }
-        System.out.println(depDescription);
-        System.out.println(depDescription2);
         depDescription.removeAll(depDescription2);
-        System.out.println(depDescription);
 
         req.setAttribute("depDescription", depDescription);
-
         req.setAttribute("nonActive", depDescription2);
 
 
@@ -86,6 +78,9 @@ public class RequestController {
         if(entrant.getRatingPoint() == 0.0){
             return "redirect:request_for_entry";
         }
+        entrant.setStatus(APPLICATION_IS_SUBMITTED);
+        entrantService.save(entrant);
+
         RequestForEntry requestForEntry = new RequestForEntry();
         requestForEntry.setDepartment(theDepartmentsOfTheFacultyService.findByDepCode(depCode).get());
         requestForEntry.setEntrant(entrant);
