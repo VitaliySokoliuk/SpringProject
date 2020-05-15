@@ -19,6 +19,10 @@
     <a href="add_marks">Add marks</a>
 </div>
 
+<div class = "item">
+    <a href="request_for_entry">Request for entry</a>
+</div>
+
 
 
 </body>
