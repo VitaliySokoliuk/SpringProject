@@ -19,6 +19,10 @@
         <a href="/admin_page/f_d_menu">Faculties and departments</a>
     </div>
 
+    <div class="item">
+        <a href="/admin_page/admin_entrants">Entrants</a>
+    </div>
+
 </div>
 
 

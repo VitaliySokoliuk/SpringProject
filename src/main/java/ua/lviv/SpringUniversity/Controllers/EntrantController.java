@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import ua.lviv.SpringUniversity.Entities.Entrant;
+import ua.lviv.SpringUniversity.Entities.Enums.EntrantsStatus;
 import ua.lviv.SpringUniversity.Entities.User;
 import ua.lviv.SpringUniversity.Services.EntrantService;
 import ua.lviv.SpringUniversity.Services.ForSecurity.CustomUserDetailsService;
@@ -54,6 +55,7 @@ public class EntrantController {
                           @RequestParam double GPAofCertificate, @RequestParam MultipartFile photo, HttpServletRequest req){
 
         Entrant entrant = new Entrant(firstName, lastName, phoneNumber, email, scoreForSpecialAchievements, GPAofCertificate);
+        entrant.setStatus(EntrantsStatus.REGISTERED);
         try {
             String contentType = photo.getContentType();
             if (contentType != null && contentType.startsWith("image")) {

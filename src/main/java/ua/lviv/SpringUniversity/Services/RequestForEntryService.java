@@ -25,4 +25,12 @@ public class RequestForEntryService {
         return requestForEntryRepo.getDepartmentsCodeByEntrantId(entrantId);
     }
 
+    public List<RequestForEntry> getByEntrantId(int id){
+        return requestForEntryRepo.getByEntrantId(id);
+    }
+
+    public void delete(int id){
+        requestForEntryRepo.deleteById(id);
+    }
+
 }
