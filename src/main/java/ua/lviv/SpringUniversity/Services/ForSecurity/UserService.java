@@ -39,7 +39,9 @@ public class UserService {
 
         userRepo.save(user);
 
-        emailSendingService.sendEmail(user.getEmail(), uuid.toString());
+        MyThread thread = new MyThread(emailSendingService, user, uuid);
+        new Thread(thread).start();
+
     }
 
     public Optional<User> findByEmail(String email){
@@ -50,6 +52,23 @@ public class UserService {
         userRepo.findByVerifyEmailHash(hash).ifPresent(user -> userRepo.confirmEmail(user.getUserId()));
     }
 
+}
 
+class MyThread implements Runnable{
+
+    EmailSendingService emailSendingService;
+    User user;
+    UUID uuid;
+
+    public MyThread(EmailSendingService emailSendingService, User user, UUID uuid) {
+        this.emailSendingService = emailSendingService;
+        this.user = user;
+        this.uuid = uuid;
+    }
+
+    @Override
+    public void run() {
+        emailSendingService.sendEmail(user.getEmail(), uuid.toString());
+    }
 
 }
