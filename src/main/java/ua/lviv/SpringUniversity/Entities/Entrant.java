@@ -177,7 +177,6 @@ public class Entrant {
                 ", ratingPoint=" + ratingPoint +
                 ", scoreForSpecialAchievements=" + scoreForSpecialAchievements +
                 ", GPAofCertificate=" + GPAofCertificate +
-                ", photo=" + Arrays.toString(photo) +
                 '}';
     }
 }

@@ -33,7 +33,7 @@
             </select>
 
             <label>Score</label>
-            <input type="number" step="any" name = "score" placeholder="Input your score" class="form-control"><br>
+            <input type="number" step="any" min="100" max="200" name = "score" placeholder="Input your score" class="form-control"><br>
 
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button type="submit" class="btn btn-dark">Fill</button><br>

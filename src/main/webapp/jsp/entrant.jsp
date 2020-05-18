@@ -50,9 +50,9 @@
             <label>Email:</label>
             <input type="email" readonly name="email" value="${user.email}" class="form-control"><br>
             <label>Score for special achievements:</label>
-            <input type="number" step="any" name = "scoreForSpecialAchievements" placeholder="Input your score for special achievements" class="form-control"><br>
+            <input type="number" step="any" min="0" max="50" name = "scoreForSpecialAchievements" placeholder="Input your score for special achievements" class="form-control"><br>
             <label>GPA of certificate:</label>
-            <input type="number" step="any" name = "GPAofCertificate" placeholder="Input your GPA of certificate" class="form-control"><br>
+            <input type="number" step="any" min="1" max="12" name = "GPAofCertificate" placeholder="Input your GPA of certificate" class="form-control"><br>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button type="submit" class="btn btn-dark">Fill</button><br>
         </form>

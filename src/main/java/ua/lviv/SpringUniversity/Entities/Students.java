@@ -19,6 +19,10 @@ public class Students {
         this.requestId = requestId;
     }
 
+    public Students(RequestForEntry requestId) {
+        this.requestId = requestId;
+    }
+
     public Students() {
     }
 

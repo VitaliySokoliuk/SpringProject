@@ -15,7 +15,7 @@ import java.util.UUID;
 @Service
 public class UserService {
 
-    private static final UsersRole DEFAULT_USERS_ROLE = UsersRole.ROLE_ADMIN;
+    private static final UsersRole DEFAULT_USERS_ROLE = UsersRole.ROLE_USER;
 
     private UserRepo userRepo;
     private PasswordEncoder passwordEncoder;

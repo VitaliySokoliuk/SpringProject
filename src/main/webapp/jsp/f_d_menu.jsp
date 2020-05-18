@@ -129,7 +129,7 @@
 
             <form method="post">
                 <input type="text" name = "name" placeholder="Input a department name" class="form-control"><br>
-                <input type="number" name = "number" placeholder="Input max number of students" class="form-control"><br>
+                <input type="number" name = "number" min="1" max="250" placeholder="Input max number of students" class="form-control"><br>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <button type="submit" class="btn btn-dark">Create</button><br>
             </form>
@@ -167,7 +167,7 @@
                 <div>
                     <form method="post">
                         <input type="text" value="${dep.departmentName}" name = "name" placeholder="Input a department name" class="form-control"><br>
-                        <input type="number" value="${dep.maxNumberOfStudents}" name = "number" placeholder="Input max number of students" class="form-control"><br>
+                        <input type="number" value="${dep.maxNumberOfStudents}" min="1" max="250" name = "number" placeholder="Input max number of students" class="form-control"><br>
                         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                         <button type="submit" class="btn btn-dark">Edit</button><br>
                     </form>
