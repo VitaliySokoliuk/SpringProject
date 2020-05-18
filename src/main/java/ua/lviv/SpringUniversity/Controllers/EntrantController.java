@@ -1,5 +1,7 @@
 package ua.lviv.SpringUniversity.Controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.Resource;
@@ -23,6 +25,7 @@ import java.util.Optional;
 @Controller
 public class EntrantController {
 
+    private static final Logger LOG = LoggerFactory.getLogger(EntrantController.class);
     private EntrantService entrantService;
     private UserService userService;
 
@@ -62,6 +65,7 @@ public class EntrantController {
                 entrant.setPhoto(photo.getBytes());
             }
         } catch (IOException e) {
+            LOG.warn("Could not save file" + photo.getOriginalFilename());
             throw new RuntimeException("Could not save file" + photo.getOriginalFilename());
         }
         entrantService.save(entrant);
