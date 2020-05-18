@@ -33,4 +33,16 @@ public class RequestForEntryService {
         requestForEntryRepo.deleteById(id);
     }
 
+    public List<RequestForEntry> getAll(){
+        return (List<RequestForEntry>) requestForEntryRepo.findAll();
+    }
+
+    public List<RequestForEntry> getAllByRatingScore(){
+        return requestForEntryRepo.getAllByRatingScore();
+    }
+
+    public int countStudentsInDep(int dep_id){
+        return requestForEntryRepo.countStudentsInDep(dep_id);
+    }
+
 }

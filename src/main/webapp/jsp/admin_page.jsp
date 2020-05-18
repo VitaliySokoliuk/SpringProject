@@ -23,6 +23,11 @@
         <a href="/admin_page/admin_entrants">Entrants</a>
     </div>
 
+    <div class="item">
+        <a href="/admin_page/finish_entry">Finish entry</a>
+    </div>
+
+
 </div>
 
 
