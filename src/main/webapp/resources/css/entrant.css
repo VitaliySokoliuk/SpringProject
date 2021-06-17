@@ -1,0 +1,13 @@
+.item{
+    height: 200px;
+    width: 80%;
+    background-color: #d5d5d5;
+    margin: 30px auto auto;
+    font-size: 25px;
+}
+
+.non{
+    pointer-events: none;
+    cursor: default;
+    color: #b9b9b9;
+}
